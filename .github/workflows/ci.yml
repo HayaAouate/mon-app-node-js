@@ -40,20 +40,23 @@ jobs:
             name: build
             path: build/
 
-        - name: Install serve and curl
-          run: |
-            yarn global add serve
-            apk add curl
+#        - name: Install serve and curl
+#          run: |
+#            yarn global add serve
+#            apk add curl
 
-        - name: Serve app and test
-          run: |
-            serve -S build &
-            sleep 10
-            curl http://localhost:3000 | grep " Hello World - Haya Aouate"
+#        - name: Serve app and test
+#          run: |
+#            serve -S build &
+#            sleep 10
+#            curl http://localhost:3000 | grep " Hello World - Haya Aouate"
 
         # Build the project
         - name: Build the project
           run: npm run build
+
+        - name: Test the project
+          run: npm run test
 
         # Deploy to GitHub Pages
         - name: Deploy to GitHub Pages

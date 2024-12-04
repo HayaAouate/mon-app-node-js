@@ -49,7 +49,7 @@ jobs:
           run: |
             serve -S build &
             sleep 10
-            curl http://localhost:3000 | grep "React App"
+            curl http://localhost:3000 | grep " Hello World - Haya Aouate"
 
         # Build the project
         - name: Build the project
